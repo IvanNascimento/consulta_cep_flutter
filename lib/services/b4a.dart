@@ -1,5 +1,3 @@
-// https://viacep.com.br/ws/01001000/json/
-
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
@@ -20,19 +18,19 @@ class B4aRepository {
     return ViaCepList.fromJson(res.data);
   }
 
-  Future<void> criar(ViaCepModel ViaCep) async {
+  Future<void> criar(ViaCepModel viaCep) async {
     try {
-      Response res = await _dio.post("/", data: ViaCep.toJson());
+      Response res = await _dio.post("/", data: viaCep.toJson());
       debugPrint(res.data.toString());
     } catch (e) {
       rethrow;
     }
   }
 
-  Future<void> atualizar(ViaCepModel ViaCep) async {
+  Future<void> atualizar(ViaCepModel viaCep) async {
     try {
       Response res =
-          await _dio.put("/${ViaCep.objectId}", data: ViaCep.toJson());
+          await _dio.put("/${viaCep.objectId}", data: viaCep.toJson());
       debugPrint(res.data.toString());
     } catch (e) {
       rethrow;
