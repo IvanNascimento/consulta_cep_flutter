@@ -1,6 +1,6 @@
 # viacep
 
-A new Flutter project.
+Projeto em flutter que consulta CPEs no site ViaCep e salva no Back4App
 
 ## Getting Started
 
